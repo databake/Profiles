@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "GBDataAccessManager.h"
 
 @interface ProfilesTests : XCTestCase
 
@@ -26,9 +27,14 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testThatWeCanFetchProfiles
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    [[GBDataAccessManager manager] fetchProfileListWithCompletionHandler:^(NSArray *profiles, NSError *error) {
+        XCTAssertNil(error, @"Should not error");
+        XCTAssertNotNil(profiles, @"The profiles array should not be nil");
+    }];
+    
 }
+
 
 @end

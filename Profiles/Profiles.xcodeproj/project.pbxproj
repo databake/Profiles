@@ -23,6 +23,16 @@
 		372AA9B3195B2E1D00994DC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA98F195B2E1D00994DC0 /* UIKit.framework */; };
 		372AA9BB195B2E1D00994DC0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 372AA9B9195B2E1D00994DC0 /* InfoPlist.strings */; };
 		372AA9BD195B2E1D00994DC0 /* ProfilesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9BC195B2E1D00994DC0 /* ProfilesTests.m */; };
+		372AA9C8195B2F6A00994DC0 /* GBDataAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9C7195B2F6A00994DC0 /* GBDataAccessManager.m */; };
+		372AA9D1195B31C500994DC0 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9CC195B31C500994DC0 /* TFHpple.m */; };
+		372AA9D2195B31C500994DC0 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9CE195B31C500994DC0 /* TFHppleElement.m */; };
+		372AA9D3195B31C500994DC0 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9D0195B31C500994DC0 /* XPathQuery.m */; };
+		372AA9D7195B327100994DC0 /* GBProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9D6195B327100994DC0 /* GBProfile.m */; };
+		372AA9D9195B568A00994DC0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA9D8195B568A00994DC0 /* libxml2.dylib */; };
+		372AA9DA195B572400994DC0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA9D8195B568A00994DC0 /* libxml2.dylib */; };
+		372AA9DC195B5BA000994DC0 /* GBDataAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9C7195B2F6A00994DC0 /* GBDataAccessManager.m */; };
+		372AA9DF195B6A1800994DC0 /* UIImage+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9DE195B6A1800994DC0 /* UIImage+Download.m */; };
+		372AA9E1195B714A00994DC0 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 372AA9E0195B714A00994DC0 /* avatar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +68,20 @@
 		372AA9B8195B2E1D00994DC0 /* ProfilesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProfilesTests-Info.plist"; sourceTree = "<group>"; };
 		372AA9BA195B2E1D00994DC0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		372AA9BC195B2E1D00994DC0 /* ProfilesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfilesTests.m; sourceTree = "<group>"; };
+		372AA9C6195B2F6A00994DC0 /* GBDataAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBDataAccessManager.h; sourceTree = "<group>"; };
+		372AA9C7195B2F6A00994DC0 /* GBDataAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBDataAccessManager.m; sourceTree = "<group>"; };
+		372AA9CB195B31C500994DC0 /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		372AA9CC195B31C500994DC0 /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		372AA9CD195B31C500994DC0 /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		372AA9CE195B31C500994DC0 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		372AA9CF195B31C500994DC0 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		372AA9D0195B31C500994DC0 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		372AA9D5195B327100994DC0 /* GBProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBProfile.h; sourceTree = "<group>"; };
+		372AA9D6195B327100994DC0 /* GBProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBProfile.m; sourceTree = "<group>"; };
+		372AA9D8195B568A00994DC0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		372AA9DD195B6A1800994DC0 /* UIImage+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Download.h"; path = "../UIImage+Download.h"; sourceTree = "<group>"; };
+		372AA9DE195B6A1800994DC0 /* UIImage+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Download.m"; path = "../UIImage+Download.m"; sourceTree = "<group>"; };
+		372AA9E0195B714A00994DC0 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372AA9D9195B568A00994DC0 /* libxml2.dylib in Frameworks */,
 				372AA98E195B2E1D00994DC0 /* CoreGraphics.framework in Frameworks */,
 				372AA990195B2E1D00994DC0 /* UIKit.framework in Frameworks */,
 				372AA98C195B2E1D00994DC0 /* Foundation.framework in Frameworks */,
@@ -75,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372AA9DA195B572400994DC0 /* libxml2.dylib in Frameworks */,
 				372AA9B1195B2E1D00994DC0 /* XCTest.framework in Frameworks */,
 				372AA9B3195B2E1D00994DC0 /* UIKit.framework in Frameworks */,
 				372AA9B2195B2E1D00994DC0 /* Foundation.framework in Frameworks */,
@@ -106,6 +132,7 @@
 		372AA98A195B2E1D00994DC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				372AA9D8195B568A00994DC0 /* libxml2.dylib */,
 				372AA98B195B2E1D00994DC0 /* Foundation.framework */,
 				372AA98D195B2E1D00994DC0 /* CoreGraphics.framework */,
 				372AA98F195B2E1D00994DC0 /* UIKit.framework */,
@@ -117,6 +144,11 @@
 		372AA991195B2E1D00994DC0 /* Profiles */ = {
 			isa = PBXGroup;
 			children = (
+				372AA9E0195B714A00994DC0 /* avatar.png */,
+				372AA9DD195B6A1800994DC0 /* UIImage+Download.h */,
+				372AA9DE195B6A1800994DC0 /* UIImage+Download.m */,
+				372AA9D4195B325100994DC0 /* Models */,
+				372AA9C9195B318400994DC0 /* Third Parties */,
 				372AA99A195B2E1D00994DC0 /* GBAppDelegate.h */,
 				372AA99B195B2E1D00994DC0 /* GBAppDelegate.m */,
 				372AA99D195B2E1D00994DC0 /* Main_iPhone.storyboard */,
@@ -127,6 +159,8 @@
 				372AA9A7195B2E1D00994DC0 /* GBDetailViewController.m */,
 				372AA9A9195B2E1D00994DC0 /* Images.xcassets */,
 				372AA992195B2E1D00994DC0 /* Supporting Files */,
+				372AA9C6195B2F6A00994DC0 /* GBDataAccessManager.h */,
+				372AA9C7195B2F6A00994DC0 /* GBDataAccessManager.m */,
 			);
 			path = Profiles;
 			sourceTree = "<group>";
@@ -158,6 +192,36 @@
 				372AA9B9195B2E1D00994DC0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		372AA9C9195B318400994DC0 /* Third Parties */ = {
+			isa = PBXGroup;
+			children = (
+				372AA9CA195B31B300994DC0 /* hpple */,
+			);
+			path = "Third Parties";
+			sourceTree = "<group>";
+		};
+		372AA9CA195B31B300994DC0 /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				372AA9CB195B31C500994DC0 /* TFHpple.h */,
+				372AA9CC195B31C500994DC0 /* TFHpple.m */,
+				372AA9CD195B31C500994DC0 /* TFHppleElement.h */,
+				372AA9CE195B31C500994DC0 /* TFHppleElement.m */,
+				372AA9CF195B31C500994DC0 /* XPathQuery.h */,
+				372AA9D0195B31C500994DC0 /* XPathQuery.m */,
+			);
+			name = hpple;
+			sourceTree = "<group>";
+		};
+		372AA9D4195B325100994DC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				372AA9D5195B327100994DC0 /* GBProfile.h */,
+				372AA9D6195B327100994DC0 /* GBProfile.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				372AA9A2195B2E1D00994DC0 /* Main_iPad.storyboard in Resources */,
+				372AA9E1195B714A00994DC0 /* avatar.png in Resources */,
 				372AA9AA195B2E1D00994DC0 /* Images.xcassets in Resources */,
 				372AA99F195B2E1D00994DC0 /* Main_iPhone.storyboard in Resources */,
 				372AA996195B2E1D00994DC0 /* InfoPlist.strings in Resources */,
@@ -260,7 +325,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				372AA998195B2E1D00994DC0 /* main.m in Sources */,
+				372AA9D2195B31C500994DC0 /* TFHppleElement.m in Sources */,
+				372AA9D3195B31C500994DC0 /* XPathQuery.m in Sources */,
+				372AA9D1195B31C500994DC0 /* TFHpple.m in Sources */,
 				372AA99C195B2E1D00994DC0 /* GBAppDelegate.m in Sources */,
+				372AA9DF195B6A1800994DC0 /* UIImage+Download.m in Sources */,
+				372AA9C8195B2F6A00994DC0 /* GBDataAccessManager.m in Sources */,
+				372AA9D7195B327100994DC0 /* GBProfile.m in Sources */,
 				372AA9A8195B2E1D00994DC0 /* GBDetailViewController.m in Sources */,
 				372AA9A5195B2E1D00994DC0 /* GBMasterViewController.m in Sources */,
 			);
@@ -271,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				372AA9BD195B2E1D00994DC0 /* ProfilesTests.m in Sources */,
+				372AA9DC195B5BA000994DC0 /* GBDataAccessManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +471,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Profiles/Profiles-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "Profiles/Profiles-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -412,6 +489,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Profiles/Profiles-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = "Profiles/Profiles-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

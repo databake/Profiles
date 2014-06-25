@@ -7,15 +7,25 @@
 //
 
 #import "GBMasterViewController.h"
-
 #import "GBDetailViewController.h"
+#import "GBDataAccessManager.h"
+#import "GBProfile.h"
 
 @interface GBMasterViewController () {
-    NSMutableArray *_objects;
+    NSArray *_objects;
 }
 @end
 
 @implementation GBMasterViewController
+
+- (void)fetchData
+{
+    [[GBDataAccessManager manager] fetchProfileListWithCompletionHandler:^(NSArray *profiles, NSError *error) {
+        _objects = profiles;
+        [self.tableView reloadData];
+        
+    }];
+}
 
 - (void)awakeFromNib
 {
@@ -29,11 +39,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    [self fetchData];
     self.detailViewController = (GBDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -45,12 +52,6 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - Table View
@@ -68,43 +69,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    GBProfile *profile = _objects[indexPath.row];
+    cell.textLabel.text = profile.name;
+    cell.detailTextLabel.text = profile.role;
+    [[GBDataAccessManager manager] fetchProfileImageForURL:profile.url block:^(UIImage *image) {
+        cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width /2 ;
+        cell.imageView.clipsToBounds = YES;
+        cell.imageView.image = image;
+    }];
     return cell;
 }
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -118,8 +92,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        GBProfile *object = _objects[indexPath.row];
+        [[segue destinationViewController] setDetailItem:object.description];
     }
 }
 
