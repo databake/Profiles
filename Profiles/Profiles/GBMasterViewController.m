@@ -12,7 +12,7 @@
 #import "GBFetchedResultsTableViewDataSource.h"
 #import "NSManagedObject+GBAdditions.h"
 #import "Profile.h"
-#import "GBParseOperation.h"
+#import "GBSyncOperation.h"
 #import "UIImage+Download.h"
 #import "UIImage+GBAdditions.h"
 
@@ -53,7 +53,7 @@
 
 - (void)activateParseOperation
 {
-    GBParseOperation *parseOperation = [[GBParseOperation alloc] initWithData:nil sharedPSC:self.persistenceController.context.persistentStoreCoordinator] ;
+    GBSyncOperation *parseOperation = [[GBSyncOperation alloc] initWithData:nil sharedPSC:self.persistenceController.context.persistentStoreCoordinator] ;
     self.parseQueue = [NSOperationQueue new];
     [self.parseQueue addOperation:parseOperation];
     [self.parseQueue addObserver:self forKeyPath:@"operationCount" options:0 context:NULL];

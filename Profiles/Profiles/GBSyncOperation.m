@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Donson. All rights reserved.
 //
 
-#import "GBParseOperation.h"
+#import "GBSyncOperation.h"
 #import "Profile.h"
 #import "TFHpple.h"
 
 static NSUInteger const kSizeOfProfileBatch = 10;
 static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20team";
 
-@interface GBParseOperation ()
+@interface GBSyncOperation ()
 
 @property (strong) NSPersistentStoreCoordinator *sharedPSC;
 @property (strong) NSManagedObjectContext *managedObjectContext;
@@ -22,7 +22,7 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
 
 @end
 
-@implementation GBParseOperation
+@implementation GBSyncOperation
 
 - (instancetype)initWithData:(NSSet *)parseDataSet sharedPSC:(NSPersistentStoreCoordinator *)psc
 {

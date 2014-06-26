@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface GBParseOperation : NSOperation
+@interface GBSyncOperation : NSOperation
 
 @property (copy, readonly) NSSet *profileData;
 
 - (instancetype)initWithData:(NSSet *)parseDataSet sharedPSC:(NSPersistentStoreCoordinator *)psc;
-
 
 @end

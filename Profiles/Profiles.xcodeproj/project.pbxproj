@@ -35,7 +35,7 @@
 		372AA9EC195BDC3C00994DC0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA9EB195BDC3C00994DC0 /* CoreData.framework */; };
 		372AA9EF195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9EE195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m */; };
 		372AA9F2195C01ED00994DC0 /* NSManagedObject+GBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F1195C01ED00994DC0 /* NSManagedObject+GBAdditions.m */; };
-		372AA9F5195C03FD00994DC0 /* GBParseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F4195C03FD00994DC0 /* GBParseOperation.m */; };
+		372AA9F5195C03FD00994DC0 /* GBSyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */; };
 		372AA9F9195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F7195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld */; };
 		372AAA03195C1ED700994DC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AAA02195C1ED700994DC0 /* Profile.m */; };
 /* End PBXBuildFile section */
@@ -92,8 +92,8 @@
 		372AA9EE195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBFetchedResultsTableViewDataSource.m; path = ../GBFetchedResultsTableViewDataSource.m; sourceTree = "<group>"; };
 		372AA9F0195C01ED00994DC0 /* NSManagedObject+GBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+GBAdditions.h"; path = "../NSManagedObject+GBAdditions.h"; sourceTree = "<group>"; };
 		372AA9F1195C01ED00994DC0 /* NSManagedObject+GBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+GBAdditions.m"; path = "../NSManagedObject+GBAdditions.m"; sourceTree = "<group>"; };
-		372AA9F3195C03FD00994DC0 /* GBParseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBParseOperation.h; path = ../GBParseOperation.h; sourceTree = "<group>"; };
-		372AA9F4195C03FD00994DC0 /* GBParseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBParseOperation.m; path = ../GBParseOperation.m; sourceTree = "<group>"; };
+		372AA9F3195C03FD00994DC0 /* GBSyncOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBSyncOperation.h; path = ../GBSyncOperation.h; sourceTree = "<group>"; };
+		372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBSyncOperation.m; path = ../GBSyncOperation.m; sourceTree = "<group>"; };
 		372AA9F8195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GBProfilesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		372AAA01195C1ED700994DC0 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		372AAA02195C1ED700994DC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
@@ -292,8 +292,8 @@
 		377A9A5C195C457700EBE3CB /* Sync */ = {
 			isa = PBXGroup;
 			children = (
-				372AA9F3195C03FD00994DC0 /* GBParseOperation.h */,
-				372AA9F4195C03FD00994DC0 /* GBParseOperation.m */,
+				372AA9F3195C03FD00994DC0 /* GBSyncOperation.h */,
+				372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */,
 			);
 			path = Sync;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 			files = (
 				372AA9E7195BD13A00994DC0 /* UIImage+GBAdditions.m in Sources */,
 				372AA998195B2E1D00994DC0 /* main.m in Sources */,
-				372AA9F5195C03FD00994DC0 /* GBParseOperation.m in Sources */,
+				372AA9F5195C03FD00994DC0 /* GBSyncOperation.m in Sources */,
 				372AAA03195C1ED700994DC0 /* Profile.m in Sources */,
 				372AA9D2195B31C500994DC0 /* TFHppleElement.m in Sources */,
 				372AA9D3195B31C500994DC0 /* XPathQuery.m in Sources */,
