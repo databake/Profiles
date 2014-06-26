@@ -5,6 +5,10 @@
 //  Created by Graham Barker on 26/06/2014.
 //  Copyright (c) 2014 Donson. All rights reserved.
 //
+/*
+    Abstract:
+ 
+ */
 
 #import "GBSyncOperation.h"
 #import "Profile.h"
@@ -60,7 +64,7 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
         if (fetchedItems.count == 0) {
             [self.managedObjectContext insertObject:profile];
         } else {
-#pragma message "TODO: update profiles that have changed"
+#pragma message "TECH DEBT: Update changed profiles is not feasible without a unique identifier"
         }
     }
     
@@ -78,7 +82,7 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
     }
 }
 
-#pragma message "TECH DEBT: Usually responsibility for resolving deleted entites, is with the server"
+#pragma message "TECH DEBT: Usually the responsibility for identifing deleted entites, is with the server"
 - (void)removeMissingProfiles
 {
     NSFetchRequest *fetchRequest = [self fetchRequest];
@@ -125,21 +129,21 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
 
     for (TFHppleElement *element in profilesNodes) {
 
-        NSEntityDescription *ent = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
 
-        Profile *profile = [[Profile alloc] initWithEntity:ent insertIntoManagedObjectContext:nil];
+        Profile *profile = [[Profile alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
 
-        TFHppleElement *element0 = [element.children objectAtIndex:0];
-        profile.url = [[element0 firstChild] objectForKey:@"src"];
+        TFHppleElement *urlElement = [element.children objectAtIndex:0];
+        profile.url = [[urlElement firstChild] objectForKey:@"src"];
         
-        TFHppleElement *element1 = [element.children objectAtIndex:1];
-        profile.name = [[element1 firstChild] content];
+        TFHppleElement *nameElement = [element.children objectAtIndex:1];
+        profile.name = [[nameElement firstChild] content];
         
-        TFHppleElement *element2 = [element.children objectAtIndex:2];
-        profile.role = [[element2 firstChild] content];
+        TFHppleElement *roleElement = [element.children objectAtIndex:2];
+        profile.role = [[roleElement firstChild] content];
         
-        TFHppleElement *element3 = [element.children objectAtIndex:3];
-        profile.bio = [[element3 firstChild] content];
+        TFHppleElement *bioElement = [element.children objectAtIndex:3];
+        profile.bio = [[bioElement firstChild] content];
         
         [self.currentParseBatch addObject:profile];
         if ([self.currentParseBatch count] >= kSizeOfProfileBatch) {
