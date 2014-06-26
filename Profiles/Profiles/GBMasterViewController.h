@@ -14,4 +14,5 @@
 
 @property (strong, nonatomic) GBDetailViewController *detailViewController;
 
+
 @end

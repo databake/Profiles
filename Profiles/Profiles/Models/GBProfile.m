@@ -23,5 +23,35 @@
              }];
 }
 
+- (BOOL)isEqualToProfile:(GBProfile *)profile
+{
+    if (!profile) {
+        return NO;
+    }
+    
+    BOOL haveEqualURLs = (!self.url && !profile.url) || [self.url isEqualToString:profile.url];
+    
+    return haveEqualURLs;
+}
+
+#pragma mark - NSObject
+
+- (BOOL)isEqual:(id)object
+{
+    if (self == object) {
+        return YES;
+    }
+    
+    if (![object isKindOfClass:[GBProfile class]]) {
+        return NO;
+    }
+    
+    return [self isEqualToProfile:(GBProfile *)object];
+}
+
+- (NSUInteger)hash
+{
+    return [self.url hash];
+}
 
 @end

@@ -15,5 +15,6 @@
 @property (copy, nonatomic) NSString *role;
 @property (copy, nonatomic) NSString *bio;
 @property (assign, nonatomic) CGSize imageSize;
+@property (copy, nonatomic) NSData *thumbnailImage;
 
 @end
