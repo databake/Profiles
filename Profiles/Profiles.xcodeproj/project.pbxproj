@@ -164,7 +164,7 @@
 				372AAA00195C13E200994DC0 /* App */,
 				372AA9FF195C13A700994DC0 /* Categories */,
 				372AA9FD195C133E00994DC0 /* Controllers */,
-				372AA9F6195C09EE00994DC0 /* Data */,
+				372AA9F6195C09EE00994DC0 /* Coredata */,
 				372AA9D4195B325100994DC0 /* Models */,
 				372AA9FE195C136B00994DC0 /* Resources */,
 				372AA992195B2E1D00994DC0 /* Supporting Files */,
@@ -233,7 +233,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		372AA9F6195C09EE00994DC0 /* Data */ = {
+		372AA9F6195C09EE00994DC0 /* Coredata */ = {
 			isa = PBXGroup;
 			children = (
 				372AA9E8195BDB7000994DC0 /* GBCoreData.h */,
@@ -242,6 +242,7 @@
 				372AA9EE195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m */,
 				372AA9F7195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld */,
 			);
+			name = Coredata;
 			path = Data;
 			sourceTree = "<group>";
 		};
