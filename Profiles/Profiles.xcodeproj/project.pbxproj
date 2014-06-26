@@ -15,8 +15,6 @@
 		372AA99C195B2E1D00994DC0 /* GBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA99B195B2E1D00994DC0 /* GBAppDelegate.m */; };
 		372AA99F195B2E1D00994DC0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372AA99D195B2E1D00994DC0 /* Main_iPhone.storyboard */; };
 		372AA9A2195B2E1D00994DC0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372AA9A0195B2E1D00994DC0 /* Main_iPad.storyboard */; };
-		372AA9A5195B2E1D00994DC0 /* GBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9A4195B2E1D00994DC0 /* GBMasterViewController.m */; };
-		372AA9A8195B2E1D00994DC0 /* GBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9A7195B2E1D00994DC0 /* GBDetailViewController.m */; };
 		372AA9AA195B2E1D00994DC0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372AA9A9195B2E1D00994DC0 /* Images.xcassets */; };
 		372AA9B1195B2E1D00994DC0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA9B0195B2E1D00994DC0 /* XCTest.framework */; };
 		372AA9B2195B2E1D00994DC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA98B195B2E1D00994DC0 /* Foundation.framework */; };
@@ -39,6 +37,9 @@
 		372AA9F9195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F7195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld */; };
 		372AAA03195C1ED700994DC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AAA02195C1ED700994DC0 /* Profile.m */; };
 		379D4481195C676A005AEC1A /* GBSpecificWebPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */; };
+		37A434AF195CAB8500ADDECF /* GBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A434AC195CAB8500ADDECF /* GBDetailViewController.m */; };
+		37A434B0195CAB8500ADDECF /* GBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A434AE195CAB8500ADDECF /* GBMasterViewController.m */; };
+		37A434B1195CACD200ADDECF /* GBFetchedResultsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9EE195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,10 +65,6 @@
 		372AA99B195B2E1D00994DC0 /* GBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GBAppDelegate.m; sourceTree = "<group>"; };
 		372AA99E195B2E1D00994DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		372AA9A1195B2E1D00994DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		372AA9A3195B2E1D00994DC0 /* GBMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GBMasterViewController.h; path = ../GBMasterViewController.h; sourceTree = "<group>"; };
-		372AA9A4195B2E1D00994DC0 /* GBMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GBMasterViewController.m; path = ../GBMasterViewController.m; sourceTree = "<group>"; };
-		372AA9A6195B2E1D00994DC0 /* GBDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GBDetailViewController.h; path = ../GBDetailViewController.h; sourceTree = "<group>"; };
-		372AA9A7195B2E1D00994DC0 /* GBDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GBDetailViewController.m; path = ../GBDetailViewController.m; sourceTree = "<group>"; };
 		372AA9A9195B2E1D00994DC0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		372AA9AF195B2E1D00994DC0 /* ProfilesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProfilesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		372AA9B0195B2E1D00994DC0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -100,6 +97,10 @@
 		372AAA02195C1ED700994DC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSpecificWebPageParser.h; sourceTree = "<group>"; };
 		379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSpecificWebPageParser.m; sourceTree = "<group>"; };
+		37A434AB195CAB8500ADDECF /* GBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBDetailViewController.h; path = Profiles/GBDetailViewController.h; sourceTree = SOURCE_ROOT; };
+		37A434AC195CAB8500ADDECF /* GBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBDetailViewController.m; path = Profiles/GBDetailViewController.m; sourceTree = SOURCE_ROOT; };
+		37A434AD195CAB8500ADDECF /* GBMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMasterViewController.h; path = Profiles/GBMasterViewController.h; sourceTree = SOURCE_ROOT; };
+		37A434AE195CAB8500ADDECF /* GBMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMasterViewController.m; path = Profiles/GBMasterViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,10 +253,10 @@
 		372AA9FD195C133E00994DC0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				372AA9A6195B2E1D00994DC0 /* GBDetailViewController.h */,
-				372AA9A7195B2E1D00994DC0 /* GBDetailViewController.m */,
-				372AA9A3195B2E1D00994DC0 /* GBMasterViewController.h */,
-				372AA9A4195B2E1D00994DC0 /* GBMasterViewController.m */,
+				37A434AB195CAB8500ADDECF /* GBDetailViewController.h */,
+				37A434AC195CAB8500ADDECF /* GBDetailViewController.m */,
+				37A434AD195CAB8500ADDECF /* GBMasterViewController.h */,
+				37A434AE195CAB8500ADDECF /* GBMasterViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -411,15 +412,15 @@
 				372AA9D2195B31C500994DC0 /* TFHppleElement.m in Sources */,
 				372AA9D3195B31C500994DC0 /* XPathQuery.m in Sources */,
 				372AA9F9195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld in Sources */,
+				37A434B0195CAB8500ADDECF /* GBMasterViewController.m in Sources */,
 				372AA9EA195BDB7000994DC0 /* GBCoreData.m in Sources */,
+				37A434AF195CAB8500ADDECF /* GBDetailViewController.m in Sources */,
 				372AA9D1195B31C500994DC0 /* TFHpple.m in Sources */,
 				372AA99C195B2E1D00994DC0 /* GBAppDelegate.m in Sources */,
 				372AA9F2195C01ED00994DC0 /* NSManagedObject+GBAdditions.m in Sources */,
 				379D4481195C676A005AEC1A /* GBSpecificWebPageParser.m in Sources */,
 				372AA9DF195B6A1800994DC0 /* UIImage+Download.m in Sources */,
-				372AA9A8195B2E1D00994DC0 /* GBDetailViewController.m in Sources */,
 				372AA9EF195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m in Sources */,
-				372AA9A5195B2E1D00994DC0 /* GBMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A434B1195CACD200ADDECF /* GBFetchedResultsTableViewDataSource.m in Sources */,
 				372AA9BD195B2E1D00994DC0 /* ProfilesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
