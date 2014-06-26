@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @class GBDetailViewController;
+@class GBFetchedResultsTableViewDataSource;
 
 @interface GBMasterViewController : UITableViewController
 
 @property (strong, nonatomic) GBDetailViewController *detailViewController;
-
-
+- (NSFetchedResultsController *)fetchedResultsController;
 @end

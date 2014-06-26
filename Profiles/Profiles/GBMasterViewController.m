@@ -16,15 +16,6 @@
 #import "UIImage+Download.h"
 #import "UIImage+GBAdditions.h"
 
-static BOOL isRunningTests(void) __attribute__((const));
-
-static BOOL isRunningTests(void)
-{
-    NSDictionary* environment = [[NSProcessInfo processInfo] environment];
-    NSString* injectBundle = environment[@"XCInjectBundle"];
-    return [[injectBundle pathExtension] isEqualToString:@"octest"];
-}
-
 @interface GBMasterViewController () <GBFetchedResultsTableViewDataSourceDelegate>
 
 @property (strong, nonatomic) GBCoreData *persistenceController;
@@ -80,9 +71,6 @@ static BOOL isRunningTests(void)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (isRunningTests()) {
-        return;
-    }
     [self presentActivityIndicator];
     [self setupTableDataSource];
     [self startObservingManagedObjectContext];
