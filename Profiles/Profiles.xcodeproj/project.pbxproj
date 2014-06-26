@@ -26,7 +26,6 @@
 		372AA9D1195B31C500994DC0 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9CC195B31C500994DC0 /* TFHpple.m */; };
 		372AA9D2195B31C500994DC0 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9CE195B31C500994DC0 /* TFHppleElement.m */; };
 		372AA9D3195B31C500994DC0 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9D0195B31C500994DC0 /* XPathQuery.m */; };
-		372AA9D7195B327100994DC0 /* GBProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9D6195B327100994DC0 /* GBProfile.m */; };
 		372AA9D9195B568A00994DC0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA9D8195B568A00994DC0 /* libxml2.dylib */; };
 		372AA9DA195B572400994DC0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA9D8195B568A00994DC0 /* libxml2.dylib */; };
 		372AA9DF195B6A1800994DC0 /* UIImage+Download.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9DE195B6A1800994DC0 /* UIImage+Download.m */; };
@@ -80,8 +79,6 @@
 		372AA9CE195B31C500994DC0 /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		372AA9CF195B31C500994DC0 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		372AA9D0195B31C500994DC0 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		372AA9D5195B327100994DC0 /* GBProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBProfile.h; sourceTree = "<group>"; };
-		372AA9D6195B327100994DC0 /* GBProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBProfile.m; sourceTree = "<group>"; };
 		372AA9D8195B568A00994DC0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		372AA9DD195B6A1800994DC0 /* UIImage+Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Download.h"; path = "../../UIImage+Download.h"; sourceTree = "<group>"; };
 		372AA9DE195B6A1800994DC0 /* UIImage+Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Download.m"; path = "../../UIImage+Download.m"; sourceTree = "<group>"; };
@@ -232,8 +229,6 @@
 			children = (
 				372AAA01195C1ED700994DC0 /* Profile.h */,
 				372AAA02195C1ED700994DC0 /* Profile.m */,
-				372AA9D5195B327100994DC0 /* GBProfile.h */,
-				372AA9D6195B327100994DC0 /* GBProfile.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,7 +410,6 @@
 				372AA99C195B2E1D00994DC0 /* GBAppDelegate.m in Sources */,
 				372AA9F2195C01ED00994DC0 /* NSManagedObject+GBAdditions.m in Sources */,
 				372AA9DF195B6A1800994DC0 /* UIImage+Download.m in Sources */,
-				372AA9D7195B327100994DC0 /* GBProfile.m in Sources */,
 				372AA9A8195B2E1D00994DC0 /* GBDetailViewController.m in Sources */,
 				372AA9EF195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m in Sources */,
 				372AA9A5195B2E1D00994DC0 /* GBMasterViewController.m in Sources */,
