@@ -38,6 +38,7 @@
 		372AA9F5195C03FD00994DC0 /* GBSyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */; };
 		372AA9F9195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F7195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld */; };
 		372AAA03195C1ED700994DC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AAA02195C1ED700994DC0 /* Profile.m */; };
+		379D4481195C676A005AEC1A /* GBSpecificWebPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		372AA9F8195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GBProfilesDataModel.xcdatamodel; sourceTree = "<group>"; };
 		372AAA01195C1ED700994DC0 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		372AAA02195C1ED700994DC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSpecificWebPageParser.h; sourceTree = "<group>"; };
+		379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSpecificWebPageParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +296,8 @@
 		377A9A5C195C457700EBE3CB /* Sync */ = {
 			isa = PBXGroup;
 			children = (
+				379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */,
+				379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */,
 				372AA9F3195C03FD00994DC0 /* GBSyncOperation.h */,
 				372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */,
 			);
@@ -410,6 +415,7 @@
 				372AA9D1195B31C500994DC0 /* TFHpple.m in Sources */,
 				372AA99C195B2E1D00994DC0 /* GBAppDelegate.m in Sources */,
 				372AA9F2195C01ED00994DC0 /* NSManagedObject+GBAdditions.m in Sources */,
+				379D4481195C676A005AEC1A /* GBSpecificWebPageParser.m in Sources */,
 				372AA9DF195B6A1800994DC0 /* UIImage+Download.m in Sources */,
 				372AA9A8195B2E1D00994DC0 /* GBDetailViewController.m in Sources */,
 				372AA9EF195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m in Sources */,

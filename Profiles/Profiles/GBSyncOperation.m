@@ -13,16 +13,18 @@
 #import "GBSyncOperation.h"
 #import "Profile.h"
 #import "TFHpple.h"
+#import "GBSpecificWebPageParser.h"
 
 static NSUInteger const kSizeOfProfileBatch = 10;
 static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20team";
 
-@interface GBSyncOperation ()
+@interface GBSyncOperation () <GBSpecificWebPageParserDelegate>
 
 @property (strong) NSPersistentStoreCoordinator *sharedPSC;
 @property (strong) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) NSMutableArray *currentParseBatch;
 @property (nonatomic) NSMutableArray *latestParseNamesList;
+@property (strong, nonatomic) GBSpecificWebPageParser *parser;
 
 @end
 
@@ -103,56 +105,35 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
     self.managedObjectContext = [[NSManagedObjectContext alloc] init];
     self.managedObjectContext.persistentStoreCoordinator = self.sharedPSC;
 
-    [self parseWebPage];
-    
-    if ([self.currentParseBatch count] > 0) {
-        [self addProfilesToList:self.currentParseBatch];
-    }
+    self.parser = [[GBSpecificWebPageParser alloc] initWithBatchSize:kSizeOfProfileBatch forURL:[NSURL URLWithString:GBWebPageURL] context:self.managedObjectContext];
+    self.parser.delegate = self;
+    [self.parser startParsing];
     
     [self removeMissingProfiles];
 }
 
-- (NSArray *)fetchProfileNodes
+#pragma mark - GBSpecificWebPageParserDelegate
+
+
+- (void)parser:(GBSpecificWebPageParser *)parser didParseBatch:(NSArray *)batch
 {
-    NSURL *profilesUrl = [NSURL URLWithString:GBWebPageURL];
-    NSData *profilessHtmlData = [NSData dataWithContentsOfURL:profilesUrl];
-    TFHpple *profilesParser = [TFHpple hppleWithHTMLData:profilessHtmlData];
-    NSString *profilesXpathQueryString = @"//div[@class='col col2']";
-    NSArray *profilesNodes = [profilesParser searchWithXPathQuery:profilesXpathQueryString];
-    return profilesNodes;
-}
-
-#pragma message "TECH DEBT: In a real app, this method would be replaced with a more robust solution"
-- (void)parseWebPage
-{
-    NSArray *profilesNodes = [self fetchProfileNodes];
-
-    for (TFHppleElement *element in profilesNodes) {
-
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.managedObjectContext];
-
-        Profile *profile = [[Profile alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
-
-        TFHppleElement *urlElement = [element.children objectAtIndex:0];
-        profile.url = [[urlElement firstChild] objectForKey:@"src"];
-        
-        TFHppleElement *nameElement = [element.children objectAtIndex:1];
-        profile.name = [[nameElement firstChild] content];
-        
-        TFHppleElement *roleElement = [element.children objectAtIndex:2];
-        profile.role = [[roleElement firstChild] content];
-        
-        TFHppleElement *bioElement = [element.children objectAtIndex:3];
-        profile.bio = [[bioElement firstChild] content];
-        
+    [batch enumerateObjectsUsingBlock:^(Profile *profile, NSUInteger idx, BOOL *stop) {
         [self.currentParseBatch addObject:profile];
         if ([self.currentParseBatch count] >= kSizeOfProfileBatch) {
             [self addProfilesToList:self.currentParseBatch];
             self.currentParseBatch = [NSMutableArray array];
         }
-        
-    }
+    }];
 }
 
+- (void)parser:(GBSpecificWebPageParser *)parser didCompleteWithBatch:(NSArray *)batch;
+{
+    [batch enumerateObjectsUsingBlock:^(Profile *profile, NSUInteger idx, BOOL *stop) {
+        [self.currentParseBatch addObject:profile];
+    }];
+    if ([self.currentParseBatch count] > 0) {
+        [self addProfilesToList:self.currentParseBatch];
+    }
+}
 
 @end
