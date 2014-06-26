@@ -108,12 +108,17 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
     self.parser = [[GBSpecificWebPageParser alloc] initWithBatchSize:kSizeOfProfileBatch forURL:[NSURL URLWithString:GBWebPageURL] context:self.managedObjectContext];
     self.parser.delegate = self;
     [self.parser startParsing];
-    
-    [self removeMissingProfiles];
+    if ([self shouldCheckForMissingProfiles]) {
+        [self removeMissingProfiles];
+    }
+}
+
+- (BOOL)shouldCheckForMissingProfiles
+{
+    return self.latestParseNamesList.count > 0;
 }
 
 #pragma mark - GBSpecificWebPageParserDelegate
-
 
 - (void)parser:(GBSpecificWebPageParser *)parser didParseBatch:(NSArray *)batch
 {
