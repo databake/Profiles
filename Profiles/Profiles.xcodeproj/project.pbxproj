@@ -171,6 +171,7 @@
 				372AA9D4195B325100994DC0 /* Models */,
 				372AA9FE195C136B00994DC0 /* Resources */,
 				372AA992195B2E1D00994DC0 /* Supporting Files */,
+				377A9A5C195C457700EBE3CB /* Sync */,
 				372AA9C9195B318400994DC0 /* Third Parties */,
 			);
 			path = Profiles;
@@ -208,12 +209,12 @@
 		372AA9C9195B318400994DC0 /* Third Parties */ = {
 			isa = PBXGroup;
 			children = (
-				372AA9CA195B31B300994DC0 /* hpple */,
+				372AA9CA195B31B300994DC0 /* TFHpple */,
 			);
 			path = "Third Parties";
 			sourceTree = "<group>";
 		};
-		372AA9CA195B31B300994DC0 /* hpple */ = {
+		372AA9CA195B31B300994DC0 /* TFHpple */ = {
 			isa = PBXGroup;
 			children = (
 				372AA9CB195B31C500994DC0 /* TFHpple.h */,
@@ -223,7 +224,7 @@
 				372AA9CF195B31C500994DC0 /* XPathQuery.h */,
 				372AA9D0195B31C500994DC0 /* XPathQuery.m */,
 			);
-			name = hpple;
+			name = TFHpple;
 			sourceTree = "<group>";
 		};
 		372AA9D4195B325100994DC0 /* Models */ = {
@@ -244,8 +245,6 @@
 				372AA9E9195BDB7000994DC0 /* GBCoreData.m */,
 				372AA9ED195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.h */,
 				372AA9EE195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m */,
-				372AA9F3195C03FD00994DC0 /* GBParseOperation.h */,
-				372AA9F4195C03FD00994DC0 /* GBParseOperation.m */,
 				372AA9F7195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld */,
 			);
 			path = Data;
@@ -293,6 +292,15 @@
 				372AA99B195B2E1D00994DC0 /* GBAppDelegate.m */,
 			);
 			name = App;
+			sourceTree = "<group>";
+		};
+		377A9A5C195C457700EBE3CB /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				372AA9F3195C03FD00994DC0 /* GBParseOperation.h */,
+				372AA9F4195C03FD00994DC0 /* GBParseOperation.m */,
+			);
+			path = Sync;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
