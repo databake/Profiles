@@ -12,7 +12,6 @@
 
 #import "GBSyncOperation.h"
 #import "Profile.h"
-#import "TFHpple.h"
 #import "GBSpecificWebPageParser.h"
 
 static NSUInteger const kSizeOfProfileBatch = 10;

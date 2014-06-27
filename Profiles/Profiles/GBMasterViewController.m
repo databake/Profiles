@@ -53,7 +53,9 @@
 
 - (void)activateParseOperation
 {
-    GBSyncOperation *parseOperation = [[GBSyncOperation alloc] initWithData:nil sharedPSC:self.persistenceController.context.persistentStoreCoordinator] ;
+    GBSyncOperation *parseOperation ;
+    parseOperation = [[GBSyncOperation alloc] initWithData:nil
+                                                 sharedPSC:self.persistenceController.context.persistentStoreCoordinator];
     self.parseQueue = [NSOperationQueue new];
     [self.parseQueue addOperation:parseOperation];
     [self.parseQueue addObserver:self forKeyPath:@"operationCount" options:0 context:NULL];
@@ -105,7 +107,7 @@
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.persistenceController.context sectionNameKeyPath:nil cacheName:nil];
     
 	NSError *error = nil;
-	if ([fetchedResultsController performFetch:&error] == NO) {
+	if (![fetchedResultsController performFetch:&error]) {
 	    NSAssert2(NO, @"Unresolved error %@, %@", error, [error userInfo]);
 	}
     
@@ -175,9 +177,12 @@
 
 - (void)presentFatalErrorAlertView
 {
-    NSString *title = NSLocalizedString(@"Sorry", nil);
-    NSString *message = NSLocalizedString(@"There has been a fatal error. Please close the app.", nil);
-    NSString *buttonTitle = NSLocalizedString(@"OK", nil);
+    NSString *title;
+    title = NSLocalizedString([NSString stringWithFormat:@"Sorry"], nil);
+    NSString *message;
+    message = NSLocalizedString([NSString stringWithFormat:@"There has been a fatal error. Please close the app."], nil);
+    NSString *buttonTitle;
+    buttonTitle = NSLocalizedString([NSString stringWithFormat:@"OK"], nil);
     
     [[[UIAlertView alloc] initWithTitle:title
                                 message:message
@@ -229,12 +234,10 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if (object == self.parseQueue && [keyPath isEqualToString:@"operationCount"]) {
-        
         if (self.parseQueue.operationCount == 0) {
             [self performSelectorOnMainThread:@selector(hideActivityIndicator) withObject:nil waitUntilDone:NO];
         }
-    }
-    else {
+    } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }

@@ -28,7 +28,7 @@ NSString *const GBPSCDidInitialize = @"GBPersistenceControllerDidInitialize";
     if (self) {
         _storeURL = storeURL;
         _model = model;
-        if ([self setupCoreDataStack] == NO) {
+        if (![self setupCoreDataStack]) {
             return nil;
         }
     }
@@ -118,12 +118,12 @@ NSString *const GBPSCDidInitialize = @"GBPersistenceControllerDidInitialize";
     NSString *storeName = [storeURL.lastPathComponent stringByDeletingPathExtension];
     for (NSURL *url in enumerator) {
         
-        if ([url.lastPathComponent hasPrefix:storeName] == NO) {
+        if (![url.lastPathComponent hasPrefix:storeName]) {
             continue;
         }
         
         NSError *fileManagerError = nil;
-        if ([fileManager removeItemAtURL:url error:&fileManagerError] == NO) {
+        if (![fileManager removeItemAtURL:url error:&fileManagerError]) {
             
             if (error != NULL) {
                 *error = fileManagerError;
@@ -147,7 +147,7 @@ NSString *const GBPSCDidInitialize = @"GBPersistenceControllerDidInitialize";
         [self.context performBlockAndWait:^{
             
             NSError *mainContextSaveError = nil;
-            if ([self.context save:&mainContextSaveError] == NO) {
+            if (![self.context save:&mainContextSaveError]) {
                 
                 NSAssert2(NO, @"ERROR: Could not save managed object context -  %@\n%@", [mainContextSaveError localizedDescription], [mainContextSaveError userInfo]);
                 if (completion) {
@@ -173,7 +173,7 @@ NSString *const GBPSCDidInitialize = @"GBPersistenceControllerDidInitialize";
     void (^savePrivate)(void) = ^{
         
         NSError *privateContextError = nil;
-        if ([self.writerContext save:&privateContextError] == NO) {
+        if (![self.writerContext save:&privateContextError]) {
             
             NSAssert2(NO, @"ERROR: Could not save managed object context - %@\n%@", [privateContextError localizedDescription], [privateContextError userInfo]);
             if (completion) {
@@ -211,7 +211,7 @@ NSString *const GBPSCDidInitialize = @"GBPersistenceControllerDidInitialize";
 
 - (void)persistenceStackInitialized
 {
-    if ([NSThread isMainThread] == NO) {
+    if (![NSThread isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self postPersistenceStackInitializedNotification];
         });

@@ -7,3 +7,9 @@ NB As there is NO design at all. NSAssert has been used in place of complete err
 
 The TAB ios test pdf states that 3rd Party libraries should be avoided. I would normally use Kiwi as the testing framework, however in an attempt to comply I have used XCTest. Mocking and Stubs are not supported, at least in the usual sense, therefore, the tests are really an after-thought. 
 
+Example using Kiwi we can:
+
+            id protocolMock = [KWMock nullMockForProtocol:@protocol(GBSpecificWebPageParserDelegate)];
+            sut.delegate = protocolMock;
+            [[protocolMock shouldEventually] receive:@selector(parser:didParseBatch:)];
+            [sut startParsing];

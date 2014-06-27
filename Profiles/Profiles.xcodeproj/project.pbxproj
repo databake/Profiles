@@ -38,10 +38,12 @@
 		372AAA03195C1ED700994DC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AAA02195C1ED700994DC0 /* Profile.m */; };
 		37402CC9195CBB0100D76B26 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 37402CC8195CBB0100D76B26 /* README.md */; };
 		37402CCB195D63AD00D76B26 /* WebPageParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37402CCA195D63AD00D76B26 /* WebPageParserTests.m */; };
+		37402CD0195E00DB00D76B26 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 37402CCF195E00DB00D76B26 /* .travis.yml */; };
 		379D4481195C676A005AEC1A /* GBSpecificWebPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */; };
 		37A434AF195CAB8500ADDECF /* GBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A434AC195CAB8500ADDECF /* GBDetailViewController.m */; };
 		37A434B0195CAB8500ADDECF /* GBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A434AE195CAB8500ADDECF /* GBMasterViewController.m */; };
 		37A434B1195CACD200ADDECF /* GBFetchedResultsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9EE195BE87E00994DC0 /* GBFetchedResultsTableViewDataSource.m */; };
+		C1129A45D1268407E7A40076 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1129EC7B5AE36EB328DA620 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,12 +101,14 @@
 		372AAA02195C1ED700994DC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		37402CC8195CBB0100D76B26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		37402CCA195D63AD00D76B26 /* WebPageParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageParserTests.m; sourceTree = "<group>"; };
+		37402CCF195E00DB00D76B26 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSpecificWebPageParser.h; sourceTree = "<group>"; };
 		379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSpecificWebPageParser.m; sourceTree = "<group>"; };
 		37A434AB195CAB8500ADDECF /* GBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBDetailViewController.h; path = Profiles/GBDetailViewController.h; sourceTree = SOURCE_ROOT; };
 		37A434AC195CAB8500ADDECF /* GBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBDetailViewController.m; path = Profiles/GBDetailViewController.m; sourceTree = SOURCE_ROOT; };
 		37A434AD195CAB8500ADDECF /* GBMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBMasterViewController.h; path = Profiles/GBMasterViewController.h; sourceTree = SOURCE_ROOT; };
 		37A434AE195CAB8500ADDECF /* GBMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GBMasterViewController.m; path = Profiles/GBMasterViewController.m; sourceTree = SOURCE_ROOT; };
+		C1129EC7B5AE36EB328DA620 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		372AA97F195B2E1D00994DC0 = {
 			isa = PBXGroup;
 			children = (
+				37402CCF195E00DB00D76B26 /* .travis.yml */,
 				37402CC8195CBB0100D76B26 /* README.md */,
 				372AA991195B2E1D00994DC0 /* Profiles */,
 				372AA9B6195B2E1D00994DC0 /* ProfilesTests */,
@@ -179,6 +184,7 @@
 				372AA992195B2E1D00994DC0 /* Supporting Files */,
 				377A9A5C195C457700EBE3CB /* Sync */,
 				372AA9C9195B318400994DC0 /* Third Parties */,
+				C1129EC7B5AE36EB328DA620 /* Localizable.strings */,
 			);
 			path = Profiles;
 			sourceTree = "<group>";
@@ -390,10 +396,12 @@
 			files = (
 				37402CC9195CBB0100D76B26 /* README.md in Resources */,
 				372AA9A2195B2E1D00994DC0 /* Main_iPad.storyboard in Resources */,
+				37402CD0195E00DB00D76B26 /* .travis.yml in Resources */,
 				372AA9E1195B714A00994DC0 /* avatar.png in Resources */,
 				372AA9AA195B2E1D00994DC0 /* Images.xcassets in Resources */,
 				372AA99F195B2E1D00994DC0 /* Main_iPhone.storyboard in Resources */,
 				372AA996195B2E1D00994DC0 /* InfoPlist.strings in Resources */,
+				C1129A45D1268407E7A40076 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
