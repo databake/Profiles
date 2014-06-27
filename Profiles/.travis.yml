@@ -1,3 +1,0 @@
-language: objective-c
-xcode_project: Profiles/Profiles.xcodeproj
-xcode_scheme: Profiles
