@@ -1,5 +1,6 @@
 Who's Who
 =========
+[![Build Status](https://travis-ci.org/databake/Profiles.svg?branch=Develop)](https://travis-ci.org/databake/Profiles)
 
 A simple mobile app that provides easy access to biographies and pictures of employees. 
 
