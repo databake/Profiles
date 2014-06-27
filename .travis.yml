@@ -1,2 +1,2 @@
 language: objective-c
-script: xcbuild -project Profiles/Profiles.xcodeproj -scheme Profiles
+script: xcodebuild -project Profiles/Profiles.xcodeproj -scheme Profiles
