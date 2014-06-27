@@ -37,6 +37,7 @@
 		372AA9F9195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F7195C0AAE00994DC0 /* GBProfilesDataModel.xcdatamodeld */; };
 		372AAA03195C1ED700994DC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AAA02195C1ED700994DC0 /* Profile.m */; };
 		37402CC9195CBB0100D76B26 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 37402CC8195CBB0100D76B26 /* README.md */; };
+		37402CCB195D63AD00D76B26 /* WebPageParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37402CCA195D63AD00D76B26 /* WebPageParserTests.m */; };
 		379D4481195C676A005AEC1A /* GBSpecificWebPageParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */; };
 		37A434AF195CAB8500ADDECF /* GBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A434AC195CAB8500ADDECF /* GBDetailViewController.m */; };
 		37A434B0195CAB8500ADDECF /* GBMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37A434AE195CAB8500ADDECF /* GBMasterViewController.m */; };
@@ -97,6 +98,7 @@
 		372AAA01195C1ED700994DC0 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		372AAA02195C1ED700994DC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		37402CC8195CBB0100D76B26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		37402CCA195D63AD00D76B26 /* WebPageParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageParserTests.m; sourceTree = "<group>"; };
 		379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSpecificWebPageParser.h; sourceTree = "<group>"; };
 		379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSpecificWebPageParser.m; sourceTree = "<group>"; };
 		37A434AB195CAB8500ADDECF /* GBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GBDetailViewController.h; path = Profiles/GBDetailViewController.h; sourceTree = SOURCE_ROOT; };
@@ -197,6 +199,7 @@
 			children = (
 				372AA9BC195B2E1D00994DC0 /* ProfilesTests.m */,
 				372AA9B7195B2E1D00994DC0 /* Supporting Files */,
+				37402CCA195D63AD00D76B26 /* WebPageParserTests.m */,
 			);
 			path = ProfilesTests;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A434B1195CACD200ADDECF /* GBFetchedResultsTableViewDataSource.m in Sources */,
+				37402CCB195D63AD00D76B26 /* WebPageParserTests.m in Sources */,
 				372AA9BD195B2E1D00994DC0 /* ProfilesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

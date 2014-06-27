@@ -191,7 +191,7 @@
 - (GBCoreData *)persistenceController
 {
     if (_persistenceController == nil) {
-        NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"MDMCoreData.sqlite"];
+        NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Profiles.sqlite"];
         NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"GBProfilesDataModel" withExtension:@"momd"];
         _persistenceController = [[GBCoreData alloc] initWithStoreURL:storeURL modelURL:modelURL];
         if (_persistenceController == nil) {

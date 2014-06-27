@@ -24,7 +24,7 @@
 - (instancetype)initWithBatchSize:(NSUInteger)batch forURL:(NSURL *)specificPageURL context:(NSManagedObjectContext *)context
 {
     NSParameterAssert(batch >= 1);
-    NSParameterAssert(specificPageURL);
+    NSParameterAssert(specificPageURL.absoluteString.length > 0);
     NSParameterAssert(context);
     
     self = [super init];

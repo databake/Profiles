@@ -48,13 +48,6 @@
     XCTAssertTrue([self.vc conformsToProtocol:@protocol(GBFetchedResultsTableViewDataSourceDelegate) ], @"View does not conform to GBFetchedResultsTableViewDataSourceDelegate protocol"); 
 }
 
-- (void)testThatTheCorrectNumberOfObjectsIsFetched
-{
-    NSUInteger expectedObjects = 40;
-    NSUInteger actualObjects = [[self.vc.fetchedResultsController fetchedObjects] count];
-    XCTAssertEqual(expectedObjects, actualObjects, @"FetchedResultsControllwe should have %d objects, but has %d", expectedObjects, actualObjects);
-}
-
 #pragma mark - TableView
 
 - (void)testThatViewConformsToUITableViewDataSource

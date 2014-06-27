@@ -21,6 +21,7 @@
 
 @property (assign, nonatomic, readonly) NSUInteger batchSize;
 @property (copy, nonatomic, readonly) NSURL *pageURL;
+@property (strong, nonatomic, readonly) NSMutableArray *currentParseBatch;
 
 @property (weak, nonatomic) id <GBSpecificWebPageParserDelegate> delegate;
 
