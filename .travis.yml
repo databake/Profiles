@@ -1,1 +1,4 @@
 language: objective-c
+script:
+        xctool -project Develop/Profiles/Profiles.xcodeproj -scheme Profiles -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+        xctool test -project Develop/Profiles/Profiles.xcodeproj -scheme Profiles -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
