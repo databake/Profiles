@@ -1,3 +1,2 @@
 language: objective-c
-before_install:
-script: xctool -project Profiles.xcodeproj -scheme Profiles test
+script: xctool -project Profiles/Profiles.xcodeproj -scheme Profiles test
