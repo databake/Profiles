@@ -29,4 +29,8 @@
 
 - (void)startParsing;
 
+- (void)startParsingInContext:(NSManagedObjectContext *)context;
+- (void)startParsingInContext:(NSManagedObjectContext *)context withData:(NSData *)htmlData;
+
+
 @end

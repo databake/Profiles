@@ -38,23 +38,34 @@
 }
 
 
-- (NSArray *)fetchProfileNodes
+- (NSArray *)fetchProfileNodesForData:(NSData *)profilessHtmlData
 {
-    NSData *profilessHtmlData = [NSData dataWithContentsOfURL:self.pageURL];
     TFHpple *profilesParser = [TFHpple hppleWithHTMLData:profilessHtmlData];
     NSString *profilesXpathQueryString = @"//div[@class='col col2']";
     NSArray *profilesNodes = [profilesParser searchWithXPathQuery:profilesXpathQueryString];
     return profilesNodes;
 }
 
-#pragma message "TECH DEBT: In a real app, this method would be replaced with a more robust solution"
 - (void)startParsing
 {
-    NSArray *profilesNodes = [self fetchProfileNodes];
+    [self startParsingInContext:self.localContext];
+}
+
+- (void)startParsingInContext:(NSManagedObjectContext *)context;
+{
+    NSData *profilessHtmlData = [NSData dataWithContentsOfURL:self.pageURL];
+    [self startParsingInContext:context withData:profilessHtmlData];
+}
+
+
+#pragma message "TECH DEBT: In a real app, this method would be replaced with a more robust solution"
+- (void)startParsingInContext:(NSManagedObjectContext *)context withData:(NSData *)htmlData
+{
+    NSArray *profilesNodes = [self fetchProfileNodesForData:htmlData];
     
     for (TFHppleElement *element in profilesNodes) {
         
-        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:self.localContext];
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Profile" inManagedObjectContext:context];
         
         Profile *profile = [[Profile alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
         

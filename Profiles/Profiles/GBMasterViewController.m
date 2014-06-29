@@ -16,6 +16,12 @@
 #import "UIImage+Download.h"
 #import "UIImage+GBAdditions.h"
 
+static inline NSString *BBRuntimeEnvironment(NSString *varName)
+{
+    NSDictionary *environment = [[NSProcessInfo processInfo] environment];
+    return [environment objectForKey:varName];
+}
+
 @interface GBMasterViewController () <GBFetchedResultsTableViewDataSourceDelegate>
 
 @property (strong, nonatomic) GBCoreData *persistenceController;
@@ -26,6 +32,13 @@
 @end
 
 @implementation GBMasterViewController
+
+
+- (BOOL)isRunningUnitTests
+{
+    return ([BBRuntimeEnvironment(@"TARGET") isEqualToString:@"TEST"]);
+}
+
 
 - (void)dealloc
 {
@@ -73,10 +86,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self presentActivityIndicator];
-    [self setupTableDataSource];
-    [self startObservingManagedObjectContext];
-    [self activateParseOperation];
+
+    if (![self isRunningUnitTests]) {
+        [self presentActivityIndicator];
+        [self setupTableDataSource];
+        [self startObservingManagedObjectContext];
+        [self activateParseOperation];
+    }
 }
 
 - (void)didReceiveMemoryWarning
