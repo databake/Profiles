@@ -83,39 +83,4 @@
     XCTAssertEqual(expectedHeight, actualHeight, @"Cell should have %f height, but they have %f", expectedHeight, actualHeight);
 }
 
-#pragma mark - Level 1
-
-- (void)testThatWhenThereIsOnly1ProfileOnTheWebSiteItIsRefectedInTheList
-{
-}
-
-- (void)testThatRemovingASingleProfileIsReflectedInTheList
-{
-    
-}
-
-- (void)testThatAddingASingleProfileIsReflectedInTheList
-{
-    
-}
-
-#pragma mark - Level 2
-
-#pragma mark - Level 3
-
-- (void)testThatAfterAnInitialLoadTheAppWorksOffLine
-{
-    
-}
-
-
-
-- (void)testThatWeCanFetchProfiles
-{
-    XCTAssertFalse(NO, @"Oh my lord");
-}
-
-
-
-
 @end

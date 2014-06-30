@@ -143,7 +143,7 @@
     XCTAssertThrows([[GBSpecificWebPageParser alloc] initWithBatchSize:NO forURL:[NSURL URLWithString:@"gobbledegook"] context:self.localContext], @"Didn't throw");
 }
 
-- (void)testThatLessMissingContextThrows
+- (void)testThatMissingContextThrows
 {
     XCTAssertThrows([[GBSpecificWebPageParser alloc] initWithBatchSize:NO forURL:[NSURL URLWithString:@"gobbledegook"] context:nil], @"Didn't throw");
 }
