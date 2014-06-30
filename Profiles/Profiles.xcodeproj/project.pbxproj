@@ -158,6 +158,8 @@
 		3724E2D01961B6180077151B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				372AA9DD195B6A1800994DC0 /* UIImage+Download.h */,
+				372AA9DE195B6A1800994DC0 /* UIImage+Download.m */,
 				3724E2D11961B6450077151B /* GBProfileTableViewCell.h */,
 				3724E2D21961B6450077151B /* GBProfileTableViewCell.m */,
 			);
@@ -317,8 +319,6 @@
 			children = (
 				372AA9F0195C01ED00994DC0 /* NSManagedObject+GBAdditions.h */,
 				372AA9F1195C01ED00994DC0 /* NSManagedObject+GBAdditions.m */,
-				372AA9DD195B6A1800994DC0 /* UIImage+Download.h */,
-				372AA9DE195B6A1800994DC0 /* UIImage+Download.m */,
 				372AA9E5195BD13A00994DC0 /* UIImage+GBAdditions.h */,
 				372AA9E6195BD13A00994DC0 /* UIImage+GBAdditions.m */,
 			);
