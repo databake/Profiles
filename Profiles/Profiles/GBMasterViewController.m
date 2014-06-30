@@ -15,6 +15,7 @@
 #import "GBSyncOperation.h"
 #import "UIImage+Download.h"
 #import "UIImage+GBAdditions.h"
+#import "GBProfileTableViewCell.h"
 
 static inline NSString *BBRuntimeEnvironment(NSString *varName)
 {
@@ -87,6 +88,7 @@ static inline NSString *BBRuntimeEnvironment(NSString *varName)
     [super viewDidLoad];
 
     if (![self isRunningUnitTests]) {
+        self.detailViewController = (GBDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
         [self presentActivityIndicator];
         [self setupTableDataSource];
         [self startObservingManagedObjectContext];
@@ -135,12 +137,13 @@ static inline NSString *BBRuntimeEnvironment(NSString *varName)
      configureCell:(id)cell
         withObject:(id)object {
     
-    UITableViewCell *tableCell = (UITableViewCell *)cell;
+    GBProfileTableViewCell *tableCell = (GBProfileTableViewCell *)cell;
     Profile *profile = (Profile *)object;
-    tableCell.textLabel.text = profile.name;
-    tableCell.detailTextLabel.text = profile.role;
+    tableCell.nameLabel.text = profile.name;
+    tableCell.roleLabel.text = profile.role;
+    tableCell.bioLabel.text = profile.bio;
 
-    UIImageView *imageView = tableCell.imageView;
+    UIImageView *imageView = tableCell.profileImageView;
 
     if (!profile.profileImage && profile.url) {
         __weak typeof(self) weakSelf = self;
@@ -163,15 +166,21 @@ static inline NSString *BBRuntimeEnvironment(NSString *varName)
     [self save];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        Profile *profile = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        self.detailViewController.detailItem = profile.name;
+    }
+}
+
 #pragma mark - Saving
 
 - (void)save
 {
-    
     __weak typeof(self) weakSelf = self;
     [self.persistenceController saveContextAndWait:NO completion:^(NSError *error) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        
         if (error) {
             NSAssert1(NO, @"ERROR: Data could not be saved %@", [error localizedDescription]);
             [strongSelf presentFatalErrorAlertView];

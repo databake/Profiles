@@ -10,13 +10,13 @@
 #import "GBMasterViewController.h"
 #import "GBFetchedResultsTableViewDataSource.h"
 
-@interface ProfilesTests : XCTestCase
+@interface GBProfilesTests : XCTestCase
 
 @property (strong, nonatomic) GBMasterViewController *vc;
 
 @end
 
-@implementation ProfilesTests
+@implementation GBProfilesTests
 
 - (void)setUp
 {
@@ -78,7 +78,7 @@
 
 - (void)testTableViewHeightForRowAtIndexPath
 {
-    CGFloat expectedHeight = 59.0;
+    CGFloat expectedHeight = 80.0;
     CGFloat actualHeight = self.vc.tableView.rowHeight;
     XCTAssertEqual(expectedHeight, actualHeight, @"Cell should have %f height, but they have %f", expectedHeight, actualHeight);
 }
