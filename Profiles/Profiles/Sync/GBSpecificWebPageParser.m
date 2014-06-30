@@ -82,6 +82,7 @@
         profile.bio = [[bioElement firstChild] content];
         
         [self.currentParseBatch addObject:profile];
+        
         if ([self.currentParseBatch count] >= self.batchSize) {
             if ([self.delegate respondsToSelector:@selector(parser:didParseBatch:)] ) {
                 [self.delegate performSelector:@selector(parser:didParseBatch:) withObject:self withObject:[self.currentParseBatch copy]];

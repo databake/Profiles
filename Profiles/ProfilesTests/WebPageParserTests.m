@@ -20,21 +20,48 @@
 @property (assign, nonatomic) BOOL delegateCallCompleteWithBatch;
 @property (assign, nonatomic) NSUInteger profileCount;
 
-@property (copy, nonatomic) NSData *fullWebPageData;
+@property (copy, nonatomic) NSData *fortyWebPageData;
+@property (copy, nonatomic) NSData *twentyOneWebPageData;
+@property (copy, nonatomic) NSData *nineWebPageData;
 
 @end
 
+#pragma mark -
+
 @implementation WebPageParserTests
 
-- (NSData *)fullWebPageData
+
+- (NSData *)fortyWebPageData
 {
-    if (!_fullWebPageData) {
+    if (!_fortyWebPageData) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"whoswho" ofType:@"html"];
         NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
-        _fullWebPageData = [NSData dataWithContentsOfURL:url];
+        _fortyWebPageData = [NSData dataWithContentsOfURL:url];
     }
-    return _fullWebPageData;
+    return _fortyWebPageData;
 }
+
+- (NSData *)twentyOneWebPageData
+{
+    if (!_twentyOneWebPageData) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"whoswho21" ofType:@"html"];
+        NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
+        _twentyOneWebPageData = [NSData dataWithContentsOfURL:url];
+    }
+    return _twentyOneWebPageData;
+    
+}
+
+- (NSData *)nineWebPageData
+{
+    if (!_nineWebPageData) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"whoswho9" ofType:@"html"];
+        NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
+        _nineWebPageData = [NSData dataWithContentsOfURL:url];
+    }
+    return _nineWebPageData;
+}
+
 
 - (GBCoreData *)persistenceController
 {
@@ -54,6 +81,35 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (BOOL)waitForCompletion:(NSTimeInterval)timeOutSecs flag:(BOOL)flag
+{
+    NSDate *timeoutDate = [NSDate dateWithTimeIntervalSinceNow:timeOutSecs];
+    do {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:timeoutDate];
+        if ([timeoutDate timeIntervalSinceNow] < 0) {
+            break;
+        }
+    } while (!flag) ;
+    
+    return flag;
+}
+
+#pragma mark - Delegate Methods
+
+- (void)parser:(GBSpecificWebPageParser *)parser didParseBatch:(NSArray *)batch
+{
+    self.delegateCallParsedBatch = YES;
+    self.profileCount += batch.count;
+}
+
+- (void)parser:(GBSpecificWebPageParser *)parser didCompleteWithBatch:(NSArray *)batch
+{
+    self.delegateCallCompleteWithBatch = YES;
+    self.profileCount += batch.count;
+}
+
+#pragma mark - Test
+
 - (void)setUp
 {
     [super setUp];
@@ -61,12 +117,11 @@
     _localContext = self.persistenceController.context;
     self.sut = [[GBSpecificWebPageParser alloc] initWithBatchSize:10 forURL:[NSURL URLWithString:@"http://www.theappbusiness.com/our-%20team"] context:self.localContext];
     [self.sut setDelegate:self];
-    [self.sut startParsingInContext:self.persistenceController.context withData:self.fullWebPageData];
 }
 
 - (void)tearDown
 {
-    self.fullWebPageData = nil;
+    self.fortyWebPageData = nil;
     self.sut = nil;
     [super tearDown];
 }
@@ -93,31 +148,43 @@
     XCTAssertThrows([[GBSpecificWebPageParser alloc] initWithBatchSize:NO forURL:[NSURL URLWithString:@"gobbledegook"] context:nil], @"Didn't throw");
 }
 
-#pragma mark - delegate tests
+#pragma mark - Delegate Tests
 
-- (void)testThatDelegateIsCalled
+- (void)testThatDelegateParsedBatchMethodIsCalled
 {
-    XCTAssertTrue(self.delegateCallParsedBatch, @"The delegate was not called");
-    XCTAssertTrue(self.delegateCallCompleteWithBatch, @"The delegate was not called");
+    [self.sut startParsingInContext:self.persistenceController.context withData:self.fortyWebPageData];
+    XCTAssertTrue([self waitForCompletion:2 flag:self.delegateCallParsedBatch], @"The delegate method didParseBatch was not called");
 }
 
-- (void)testThatParsingFindsSomeProfiles
+- (void)testThatDelegateCompleteWithBatchIsCalled
 {
-    XCTAssertTrue(self.profileCount == 40, @"The Parser found no profiles");
+    [self.sut startParsingInContext:self.persistenceController.context withData:self.fortyWebPageData];    
+    XCTAssertTrue([self waitForCompletion:2 flag:self.delegateCallCompleteWithBatch], @"The delegate methoid didCompleteWithBatch was not called");
 }
 
-#pragma mark - delegate methods
-
-- (void)parser:(GBSpecificWebPageParser *)parser didParseBatch:(NSArray *)batch
+- (void)testThatParsingExtracts40Profiles
 {
-    self.delegateCallParsedBatch = YES;
-    self.profileCount += batch.count;
+    [self.sut startParsingInContext:self.persistenceController.context withData:self.fortyWebPageData];
+    XCTAssertTrue(self.profileCount == 40, @"The Parser extracted %u profiles, expetected 40", self.profileCount);
 }
 
-- (void)parser:(GBSpecificWebPageParser *)parser didCompleteWithBatch:(NSArray *)batch
+- (void)testThatParsingExtractsNoProfiles
 {
-    self.delegateCallCompleteWithBatch = YES;
-    self.profileCount += batch.count;
+    [self.sut startParsingInContext:self.persistenceController.context withData:nil];
+    XCTAssertTrue(self.profileCount == 0, @"The Parser extracted %u profiles, expetected 0", self.profileCount);
+}
+
+- (void)testThatParsingExtracts21Profiles
+{
+    [self.sut startParsingInContext:self.persistenceController.context withData:self.twentyOneWebPageData];
+    XCTAssertTrue(self.profileCount == 21, @"The Parser extracted %u profiles, expetected 21", self.profileCount);
+}
+
+- (void)testThatParsingExtracts9Profiles
+{
+    [self.sut startParsingInContext:self.persistenceController.context withData:self.nineWebPageData];
+    
+    XCTAssertTrue(self.profileCount == 9, @"The Parser extracted %u profiles, expetected 9", self.profileCount);
 }
 
 @end

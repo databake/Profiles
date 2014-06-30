@@ -38,6 +38,10 @@
 		372AAA03195C1ED700994DC0 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AAA02195C1ED700994DC0 /* Profile.m */; };
 		37402CC9195CBB0100D76B26 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 37402CC8195CBB0100D76B26 /* README.md */; };
 		37402CCB195D63AD00D76B26 /* WebPageParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37402CCA195D63AD00D76B26 /* WebPageParserTests.m */; };
+		37455589196149F0009A3AEE /* whoswho21.html in Resources */ = {isa = PBXBuildFile; fileRef = 37455588196149F0009A3AEE /* whoswho21.html */; };
+		3745558A196149F0009A3AEE /* whoswho21.html in Resources */ = {isa = PBXBuildFile; fileRef = 37455588196149F0009A3AEE /* whoswho21.html */; };
+		3745558C19614AFB009A3AEE /* whoswho9.html in Resources */ = {isa = PBXBuildFile; fileRef = 3745558B19614AFB009A3AEE /* whoswho9.html */; };
+		3745558D19614AFB009A3AEE /* whoswho9.html in Resources */ = {isa = PBXBuildFile; fileRef = 3745558B19614AFB009A3AEE /* whoswho9.html */; };
 		3781B8D6196089310042EEC9 /* GBSyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */; };
 		3781B8D91960AC7D0042EEC9 /* whoswho.html in Resources */ = {isa = PBXBuildFile; fileRef = 3781B8D81960AC7D0042EEC9 /* whoswho.html */; };
 		3781B8DA1960B0430042EEC9 /* whoswho.html in Resources */ = {isa = PBXBuildFile; fileRef = 3781B8D81960AC7D0042EEC9 /* whoswho.html */; };
@@ -103,6 +107,8 @@
 		372AAA02195C1ED700994DC0 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		37402CC8195CBB0100D76B26 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		37402CCA195D63AD00D76B26 /* WebPageParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageParserTests.m; sourceTree = "<group>"; };
+		37455588196149F0009A3AEE /* whoswho21.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho21.html; sourceTree = "<group>"; };
+		3745558B19614AFB009A3AEE /* whoswho9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho9.html; sourceTree = "<group>"; };
 		3781B8D81960AC7D0042EEC9 /* whoswho.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho.html; sourceTree = "<group>"; };
 		379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSpecificWebPageParser.h; sourceTree = "<group>"; };
 		379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSpecificWebPageParser.m; sourceTree = "<group>"; };
@@ -322,7 +328,9 @@
 		3781B8D71960AC660042EEC9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				37455588196149F0009A3AEE /* whoswho21.html */,
 				3781B8D81960AC7D0042EEC9 /* whoswho.html */,
+				3745558B19614AFB009A3AEE /* whoswho9.html */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -410,7 +418,9 @@
 				372AA9AA195B2E1D00994DC0 /* Images.xcassets in Resources */,
 				372AA99F195B2E1D00994DC0 /* Main_iPhone.storyboard in Resources */,
 				372AA996195B2E1D00994DC0 /* InfoPlist.strings in Resources */,
+				37455589196149F0009A3AEE /* whoswho21.html in Resources */,
 				3781B8DA1960B0430042EEC9 /* whoswho.html in Resources */,
+				3745558C19614AFB009A3AEE /* whoswho9.html in Resources */,
 				C1129A45D1268407E7A40076 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +429,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3745558D19614AFB009A3AEE /* whoswho9.html in Resources */,
+				3745558A196149F0009A3AEE /* whoswho21.html in Resources */,
 				3781B8D91960AC7D0042EEC9 /* whoswho.html in Resources */,
 				372AA9BB195B2E1D00994DC0 /* InfoPlist.strings in Resources */,
 			);
