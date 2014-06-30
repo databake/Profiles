@@ -39,7 +39,6 @@ static inline NSString *BBRuntimeEnvironment(NSString *varName)
     return ([BBRuntimeEnvironment(@"TARGET") isEqualToString:@"TEST"]);
 }
 
-
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3724E2CE1961AB090077151B /* whoswho9altered.html in Resources */ = {isa = PBXBuildFile; fileRef = 3724E2CD1961AB090077151B /* whoswho9altered.html */; };
+		3724E2CF1961AB090077151B /* whoswho9altered.html in Resources */ = {isa = PBXBuildFile; fileRef = 3724E2CD1961AB090077151B /* whoswho9altered.html */; };
 		372AA98C195B2E1D00994DC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA98B195B2E1D00994DC0 /* Foundation.framework */; };
 		372AA98E195B2E1D00994DC0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA98D195B2E1D00994DC0 /* CoreGraphics.framework */; };
 		372AA990195B2E1D00994DC0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372AA98F195B2E1D00994DC0 /* UIKit.framework */; };
@@ -42,6 +44,7 @@
 		3745558A196149F0009A3AEE /* whoswho21.html in Resources */ = {isa = PBXBuildFile; fileRef = 37455588196149F0009A3AEE /* whoswho21.html */; };
 		3745558C19614AFB009A3AEE /* whoswho9.html in Resources */ = {isa = PBXBuildFile; fileRef = 3745558B19614AFB009A3AEE /* whoswho9.html */; };
 		3745558D19614AFB009A3AEE /* whoswho9.html in Resources */ = {isa = PBXBuildFile; fileRef = 3745558B19614AFB009A3AEE /* whoswho9.html */; };
+		3745558F196167BE009A3AEE /* GBSyncOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3745558E196167BE009A3AEE /* GBSyncOperationTests.m */; };
 		3781B8D6196089310042EEC9 /* GBSyncOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 372AA9F4195C03FD00994DC0 /* GBSyncOperation.m */; };
 		3781B8D91960AC7D0042EEC9 /* whoswho.html in Resources */ = {isa = PBXBuildFile; fileRef = 3781B8D81960AC7D0042EEC9 /* whoswho.html */; };
 		3781B8DA1960B0430042EEC9 /* whoswho.html in Resources */ = {isa = PBXBuildFile; fileRef = 3781B8D81960AC7D0042EEC9 /* whoswho.html */; };
@@ -63,6 +66,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3724E2CD1961AB090077151B /* whoswho9altered.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho9altered.html; sourceTree = "<group>"; };
 		372AA988195B2E1D00994DC0 /* Profiles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profiles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		372AA98B195B2E1D00994DC0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		372AA98D195B2E1D00994DC0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,6 +113,7 @@
 		37402CCA195D63AD00D76B26 /* WebPageParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebPageParserTests.m; sourceTree = "<group>"; };
 		37455588196149F0009A3AEE /* whoswho21.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho21.html; sourceTree = "<group>"; };
 		3745558B19614AFB009A3AEE /* whoswho9.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho9.html; sourceTree = "<group>"; };
+		3745558E196167BE009A3AEE /* GBSyncOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSyncOperationTests.m; sourceTree = "<group>"; };
 		3781B8D81960AC7D0042EEC9 /* whoswho.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = whoswho.html; sourceTree = "<group>"; };
 		379D447F195C676A005AEC1A /* GBSpecificWebPageParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBSpecificWebPageParser.h; sourceTree = "<group>"; };
 		379D4480195C676A005AEC1A /* GBSpecificWebPageParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBSpecificWebPageParser.m; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 				372AA9BC195B2E1D00994DC0 /* ProfilesTests.m */,
 				372AA9B7195B2E1D00994DC0 /* Supporting Files */,
 				37402CCA195D63AD00D76B26 /* WebPageParserTests.m */,
+				3745558E196167BE009A3AEE /* GBSyncOperationTests.m */,
 			);
 			path = ProfilesTests;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 		3781B8D71960AC660042EEC9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				3724E2CD1961AB090077151B /* whoswho9altered.html */,
 				37455588196149F0009A3AEE /* whoswho21.html */,
 				3781B8D81960AC7D0042EEC9 /* whoswho.html */,
 				3745558B19614AFB009A3AEE /* whoswho9.html */,
@@ -412,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3724E2CE1961AB090077151B /* whoswho9altered.html in Resources */,
 				37402CC9195CBB0100D76B26 /* README.md in Resources */,
 				372AA9A2195B2E1D00994DC0 /* Main_iPad.storyboard in Resources */,
 				372AA9E1195B714A00994DC0 /* avatar.png in Resources */,
@@ -431,6 +439,7 @@
 			files = (
 				3745558D19614AFB009A3AEE /* whoswho9.html in Resources */,
 				3745558A196149F0009A3AEE /* whoswho21.html in Resources */,
+				3724E2CF1961AB090077151B /* whoswho9altered.html in Resources */,
 				3781B8D91960AC7D0042EEC9 /* whoswho.html in Resources */,
 				372AA9BB195B2E1D00994DC0 /* InfoPlist.strings in Resources */,
 			);
@@ -467,9 +476,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A434B1195CACD200ADDECF /* GBFetchedResultsTableViewDataSource.m in Sources */,
-				37402CCB195D63AD00D76B26 /* WebPageParserTests.m in Sources */,
-				372AA9BD195B2E1D00994DC0 /* ProfilesTests.m in Sources */,
 				3781B8D6196089310042EEC9 /* GBSyncOperation.m in Sources */,
+				37402CCB195D63AD00D76B26 /* WebPageParserTests.m in Sources */,
+				3745558F196167BE009A3AEE /* GBSyncOperationTests.m in Sources */,
+				372AA9BD195B2E1D00994DC0 /* ProfilesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

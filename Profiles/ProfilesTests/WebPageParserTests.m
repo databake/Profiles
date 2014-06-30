@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "GBSpecificWebPageParser.h"
 #import "GBCoreData.h"
+#import "Profile.h"
 
 @interface WebPageParserTests : XCTestCase<GBSpecificWebPageParserDelegate>
 
@@ -20,16 +21,17 @@
 @property (assign, nonatomic) BOOL delegateCallCompleteWithBatch;
 @property (assign, nonatomic) NSUInteger profileCount;
 
+@property (strong, nonatomic) NSMutableArray *profileData;
+
 @property (copy, nonatomic) NSData *fortyWebPageData;
 @property (copy, nonatomic) NSData *twentyOneWebPageData;
 @property (copy, nonatomic) NSData *nineWebPageData;
 
 @end
 
-#pragma mark -
-
 @implementation WebPageParserTests
 
+#pragma mark -
 
 - (NSData *)fortyWebPageData
 {
@@ -100,12 +102,14 @@
 {
     self.delegateCallParsedBatch = YES;
     self.profileCount += batch.count;
+    [self.profileData addObjectsFromArray:batch];
 }
 
 - (void)parser:(GBSpecificWebPageParser *)parser didCompleteWithBatch:(NSArray *)batch
 {
     self.delegateCallCompleteWithBatch = YES;
     self.profileCount += batch.count;
+    [self.profileData addObjectsFromArray:batch];
 }
 
 #pragma mark - Test
@@ -113,7 +117,7 @@
 - (void)setUp
 {
     [super setUp];
-
+    _profileData = [NSMutableArray array];
     _localContext = self.persistenceController.context;
     self.sut = [[GBSpecificWebPageParser alloc] initWithBatchSize:10 forURL:[NSURL URLWithString:@"http://www.theappbusiness.com/our-%20team"] context:self.localContext];
     [self.sut setDelegate:self];
@@ -123,6 +127,16 @@
 {
     self.fortyWebPageData = nil;
     self.sut = nil;
+    
+    NSPersistentStoreCoordinator *psc = self.persistenceController.context.persistentStoreCoordinator;
+    NSArray *stores = [psc persistentStores];
+    
+    for(NSPersistentStore *store in stores) {
+        [psc removePersistentStore:store error:nil];
+        [[NSFileManager defaultManager] removeItemAtPath:store.URL.path error:nil];
+    }
+    
+    psc = nil;
     [super tearDown];
 }
 
@@ -183,8 +197,16 @@
 - (void)testThatParsingExtracts9Profiles
 {
     [self.sut startParsingInContext:self.persistenceController.context withData:self.nineWebPageData];
-    
     XCTAssertTrue(self.profileCount == 9, @"The Parser extracted %u profiles, expetected 9", self.profileCount);
+}
+
+- (void)testThatParserExtractsNames
+{
+    [self.sut startParsingInContext:self.persistenceController.context withData:self.nineWebPageData];
+    Profile *firstProfile = self.profileData.firstObject;
+    XCTAssertNotNil(firstProfile.name, @"The first profile is missing the name");
+    Profile *lastProfile = self.profileData.lastObject;
+    XCTAssertNotNil(lastProfile.name, @"The last profile is missing the name");
 }
 
 @end

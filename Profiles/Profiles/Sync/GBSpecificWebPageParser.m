@@ -69,17 +69,10 @@
         
         Profile *profile = [[Profile alloc] initWithEntity:entityDescription insertIntoManagedObjectContext:nil];
         
-        TFHppleElement *urlElement = [element.children objectAtIndex:0];
-        profile.url = [[urlElement firstChild] objectForKey:@"src"];
-        
-        TFHppleElement *nameElement = [element.children objectAtIndex:1];
-        profile.name = [[nameElement firstChild] content];
-        
-        TFHppleElement *roleElement = [element.children objectAtIndex:2];
-        profile.role = [[roleElement firstChild] content];
-        
-        TFHppleElement *bioElement = [element.children objectAtIndex:3];
-        profile.bio = [[bioElement firstChild] content];
+        profile.url = [[[[element firstChildWithClassName:@"title"] firstChildWithTagName:@"img"] attributes] objectForKey:@"src"];
+        profile.name = [[[element firstChildWithTagName:@"h3"] firstChild] content];
+        profile.role = [[[element firstChildWithTagName:@"p"] firstChild] content];
+        profile.bio = [[[element firstChildWithClassName:@"user-description"] firstChild] content];
         
         [self.currentParseBatch addObject:profile];
         
@@ -89,7 +82,6 @@
             }
             self.currentParseBatch = [NSMutableArray array];
         }
-        
     }
     
     if ([self.delegate respondsToSelector:@selector(parser:didCompleteWithBatch:)]) {

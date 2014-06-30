@@ -29,7 +29,7 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
 
 @implementation GBSyncOperation
 
-- (instancetype)initWithData:(NSSet *)parseDataSet sharedPSC:(NSPersistentStoreCoordinator *)psc
+- (instancetype)initWithData:(NSData *)parseDataSet sharedPSC:(NSPersistentStoreCoordinator *)psc
 {
     self = [super init];
     if (self) {
@@ -60,12 +60,17 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
     
     for (profile in profiles) {
         [self.latestParseNamesList addObject:profile.name];
-        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name = %@ AND url = %@", profile.name, profile.url];
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"name like[c] %@ AND url like[c] %@", profile.name, profile.url];
+        fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES], [NSSortDescriptor sortDescriptorWithKey:@"url" ascending:YES]];
         NSArray *fetchedItems = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         if (fetchedItems.count == 0) {
+            // we found no duplicate so add the profile
             [self.managedObjectContext insertObject:profile];
+        } else if (fetchedItems.count > 1) {
+            
         } else {
 #pragma message "TECH DEBT: Update changed profiles is not feasible without a unique identifier"
+            
         }
     }
     
@@ -97,6 +102,9 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
     }
     
     [self saveContext:&error];
+    if (error) {
+        NSLog(@"Error %@", error);
+    }
 }
 
 - (void)main
@@ -106,7 +114,13 @@ static NSString *const GBWebPageURL = @"http://www.theappbusiness.com/our-%20tea
 
     self.parser = [[GBSpecificWebPageParser alloc] initWithBatchSize:kSizeOfProfileBatch forURL:[NSURL URLWithString:GBWebPageURL] context:self.managedObjectContext];
     self.parser.delegate = self;
-    [self.parser startParsing];
+    
+    if (!self.profileData) {
+        [self.parser startParsing];
+    } else {
+        [self.parser startParsingInContext:self.managedObjectContext withData:self.profileData];
+    }
+    
     if ([self shouldCheckForMissingProfiles]) {
         [self removeMissingProfiles];
     }

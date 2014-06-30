@@ -11,7 +11,7 @@
 
 @interface GBSyncOperation : NSOperation
 
-@property (copy, readonly) NSSet *profileData;
+@property (copy, readonly) NSData *profileData;
 
 /**
  *  The designated initializer (NS_DEGISNATED_INITILIZER) for the sync operation
@@ -21,6 +21,6 @@
  *
  *  @return An initialized Sync Operation
  */
-- (instancetype)initWithData:(NSSet *)parseDataSet sharedPSC:(NSPersistentStoreCoordinator *)psc;
+- (instancetype)initWithData:(NSData *)parseDataSet sharedPSC:(NSPersistentStoreCoordinator *)psc;
 
 @end
