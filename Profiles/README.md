@@ -1,5 +1,7 @@
-Who's Who
+Who's Who 
 =========
+[![Build Status](https://travis-ci.org/databake/Profiles.svg?branch=Develop)](https://travis-ci.org/databake/Profiles)
+
 A simple mobile app that provides easy access to biographies and pictures of employees. 
 
 NB As there is NO design at all. NSAssert has been used in place of complete error handling, however all the places that would normally have error handling, have an NSAssert.
