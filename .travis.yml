@@ -1,2 +1,5 @@
 language: objective-c
-script: xcodebuild -project Profiles/Profiles.xcodeproj -scheme Profiles
+before_script:
+  - brew update
+  - brew upgrade xctool
+script: xctool test -project Tests/UnitTests.xcodeproj -scheme UnitTests -sdk iphonesimulator
