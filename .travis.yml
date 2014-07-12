@@ -2,4 +2,4 @@ language: objective-c
 before_script:
   - brew update
   - brew upgrade xctool
-script: xctool test -project Profiles/Profiles.xcodproj -scheme ProfilesTests -sdk iphonesimulator
+script: xctool test -project Profiles/Profiles.xcodeproj -scheme ProfilesTests -sdk iphonesimulator
