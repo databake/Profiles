@@ -10,9 +10,6 @@
 
 @interface UIImage (GBAdditions)
 
-+ (UIImage *)roundImageWithImage:(UIImage *)original scaledToFillSize:(CGSize)size;
-+ (UIImage *)imageWithImage:(UIImage *)image scaledToFillSize:(CGSize)size;
-+ (UIImage *)imageWithRoundedCornersSize:(float)cornerRadius usingImage:(UIImage *)original;
-
+- (UIImage *)roundedImageScaledToSize:(CGSize)size;
 
 @end

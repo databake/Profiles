@@ -10,41 +10,29 @@
 
 @implementation UIImage (GBAdditions)
 
-+ (UIImage *)imageWithImage:(UIImage *)image scaledToFillSize:(CGSize)size
+- (CGRect)rectForCenteredProfileImage:(CGSize)size
 {
-    CGFloat scale = MAX(size.width/image.size.width, size.height/image.size.height);
-    CGFloat width = image.size.width * scale;
-    CGFloat height = image.size.height * scale;
+    CGFloat scale = MAX(size.width/self.size.width, size.height/self.size.height);
+    CGFloat width = self.size.width * scale;
+    CGFloat height = self.size.height * scale;
     CGRect imageRect = CGRectMake((size.width - width)/2.0f,
                                   (size.height - height)/2.0f,
                                   width,
                                   height);
-    
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
-    [image drawInRect:imageRect];
+    return imageRect;
+}
+
+- (UIImage *)roundedImageScaledToSize:(CGSize)size
+{
+    CGRect imageRect = [self rectForCenteredProfileImage:size];
+    UIGraphicsBeginImageContextWithOptions(imageRect.size, NO, 1.0);
+    CGRect rect = CGRectMake(0, 0, imageRect.size.width, imageRect.size.height);
+    UIBezierPath *roundedRectanglePath = [UIBezierPath bezierPathWithOvalInRect:rect];
+    [roundedRectanglePath addClip];
+    [self drawInRect:imageRect];
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
-}
-
-+ (UIImage *)imageWithRoundedCornersSize:(float)cornerRadius usingImage:(UIImage *)original
-{
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:original];
-    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
-    
-    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
-                                cornerRadius:cornerRadius] addClip];
-    [original drawInRect:imageView.bounds];
-    imageView.image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return imageView.image;
-}
-
-+ (UIImage *)roundImageWithImage:(UIImage *)original scaledToFillSize:(CGSize)size
-{
-    UIImage *scaledImage = [self imageWithImage:original scaledToFillSize:size];
-    UIImage *roundedImage = [self imageWithRoundedCornersSize:size.width usingImage:scaledImage];
-    return roundedImage;
 }
 
 @end

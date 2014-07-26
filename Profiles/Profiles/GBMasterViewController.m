@@ -148,10 +148,8 @@ static inline NSString *BBRuntimeEnvironment(NSString *varName)
     if (!profile.profileImage && profile.url) {
         __weak typeof(self) weakSelf = self;
         [UIImage loadFromURL:[NSURL URLWithString:profile.url] callback:^(UIImage *image) {
-            UIImage *formattedImage = [UIImage roundImageWithImage:image scaledToFillSize:imageView.bounds.size];
-            profile.profileImage = UIImagePNGRepresentation(formattedImage);
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf save];
+            profile.profileImage = UIImagePNGRepresentation(image);
+            [weakSelf save];
         }];
     } else {
         imageView.image = [UIImage imageWithData:profile.profileImage];
